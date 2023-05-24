@@ -1,0 +1,96 @@
+<!-- <p>my-app works!</p>
+<p>{{myAppName}}</p>
+<p>{{2*2}}</p>
+<p>{{"Welcome "+myAppName}}</p> -->
+<h2>Interpolation</h2>
+<div>
+    <input type="text" value="{{myAppName}}">
+</div>
+<h2>Property Binding</h2>
+<div>
+    <!-- interpolation -->
+    <input type="text" [value]="myAppName" disabled="{{isDisabled}}">
+    <!-- property binding -->
+    <input type="text" [value]="myAppName" [disabled]="isDisabled">
+
+</div>
+<p></p>
+<h2>Event binding</h2>
+<p></p>
+<div>
+    <button (click)="onClick($event)">Enable the input </button>
+</div>
+<p></p>
+
+<!-- template reference / local reference -->
+<div>
+    <input type="text" #myName [value]="myAppName"  [disabled]="isDisabled"> {{myName.value}}
+</div>
+<h2>Two way data binding</h2>
+<p>-------------------------------------------------------------------------------------</p>
+
+<input type="text" name="" id="" [(ngModel)]="name">
+<p></p>
+<p>{{name}}</p>
+
+<h2>Directives</h2>
+<ul>
+    <li>ngIf
+        <div *ngIf="show else elseBlock"; >
+            directives-ngIf
+        </div>
+        <ng-template #elseBlock>
+            <p>else block</p>
+        </ng-template>
+        <!-- <div *ngIf="!show">
+           not  directives-ngIf
+        </div> -->
+    </li>
+    <li>ngFor
+        <div>
+            number
+            <ul>
+                <li *ngFor="let e of arr">{{e}}</li>
+            </ul>
+           
+        </div>
+        <div>
+            string
+            <ul>
+                <li *ngFor="let e of str;last as l">{{l}} {{e}}</li>
+            </ul>
+        </div>
+    </li>
+
+</ul>
+
+<p>----------------------------------------------------------------------------------</p>
+<div>
+    <h1>Parent to child</h1>
+    
+    <h2>{{property}}</h2>
+</div>
+<div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+        </tr>
+        <tr *ngFor="let d of userData">
+            <td>{{d.name}}</td>
+            <td>{{d.age}}</td>
+            <td>{{d.email}}</td>
+        </tr>
+    </table>
+</div>
+
+<p>--------------------------------------------------------------------------------------</p>
+
+<h2>
+    child to parent
+</h2>
+<div>
+   <button (click)="sendToParent()">send to parent</button>
+</div>
+
