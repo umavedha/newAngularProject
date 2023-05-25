@@ -29,6 +29,7 @@ AfterViewChecked,AfterContentInit,AfterContentChecked,OnDestroy{
   str:string[]=['uma','maha','saravana']
   name:string='';
   
+  
   constructor(){
     console.log('inside constructor');
     
